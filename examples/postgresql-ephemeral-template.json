@@ -27,13 +27,20 @@
         "annotations": {
           "template.openshift.io/expose-username": "{.data['database-user']}",
           "template.openshift.io/expose-password": "{.data['database-password']}",
-          "template.openshift.io/expose-database_name": "{.data['database-name']}"
+          "template.openshift.io/expose-database_name": "{.data['database-name']}",
+          "template.openshift.io/expose-service_type": "{.data['service-type']}",
+          "template.openshift.io/expose-service_name": "{.data['service-name']}",
+          "template.openshift.io/expose-service_port": "{.data['service-port']}"
+
         }
       },
       "stringData" : {
         "database-user" : "${POSTGRESQL_USER}",
         "database-password" : "${POSTGRESQL_PASSWORD}",
-        "database-name" : "${POSTGRESQL_DATABASE}"
+        "database-name" : "${POSTGRESQL_DATABASE}",
+        "service-type" : "postgresql",
+        "service-name" : "${DATABASE_SERVICE_NAME}",
+        "service-port" : "5432"
       }
     },
     {
